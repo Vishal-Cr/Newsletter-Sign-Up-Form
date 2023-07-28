@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Flex&family=Roboto:wght@400;700&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+   font-size:16.25px;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Flex', sans-serif;
+    
+}
+.container{
+    display:flex;
+    height:100vh;
+    width:100vw;
+    height:100vh;
+    padding:1.2rem 0;
+    justify-content: right;
+    gap:1.5rem;
+    }
+.info-section{
+    display: flex;
+    width:40%;
+    flex-direction: column;
+    padding:1.5rem;
+    justify-content: center;
+   height:100%;    
+ 
+}
+.card{
+    height:auto;
+    
+}
+
+.heading-sub{
+   flex:0.5;    
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin-bottom:1rem; 
+}
+.heading-sub h1{
+    font-size:clamp(2rem, 4vw, 3.5rem) ;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+.heading-sub p{
+    font-size:clamp(0.8rem,2vw,1.3rem);
+    font-weight:400;
+}
+.tickList{ 
+    flex:0.4;
+    display:flex;
+    align-items:start;
+    flex-direction: column;
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
+.tickList li{
+    font-size: clamp(1rem,2vw,1.5rem);
+    margin:0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+.tickList li::before{
+    content:"";
+    top:0;
+    left:0;
+    position: absolute;
+    background-image: url('/assets/images/icon-list.svg');
+    background-size: contain;
+    background-repeat: none;
+    height:20px;
+    width:20px;
+}
+.form{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.form label{
+    font-size: 1rem;
+    margin:1rem 0;
+    font-weight: 700;
+}
+.form .input,.btn{
+    padding:1.5rem;
+    border-radius: 10px;
+    margin-bottom:2rem;
+    border:0.5px solid  hsl(231, 7%, 60%);
+    outline:none;
+}
+.form .input:focus{
+    border:2px solid  hsl(234, 29%, 20%);
+}
+.form button, .success-btn {
+background-color: hsl(234, 29%, 20%);
+color:#fff;
+border-radius:12px;
+font-size: clamp(1rem, 2vw,1.5rem);
+font-weight: 400;
+cursor:pointer;
+transition:all 1s;
+outline:none;
+}
+
+.form button:hover, .success-btn:hover{
+background: linear-gradient(to right,hsl(339, 76%, 52%),hsl(4, 100%, 57%));
+/* box-shadow: 2px 2px 2rem rgba(248, 108, 0, 0.851);   */
+}
+.image-container{
+    flex:0.7;
+    width:100%;
+    margin-right:1.5rem;
+    display: flex;
+    justify-content: left;
+    background-image: url('/assets/images/illustration-sign-up-desktop.svg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center center ;
+
+    
+}    
+
+.success-card{
+   display:none;
+    width:40vw;
+    height:80vh;
+       border-radius: 20px;
+    padding:2rem;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.errorDiv{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+#emailError{
+    display:none;
+    color:red;
+    text-align: right;
+    font-weight:400;
+    
+}
+.success-card .texts{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height:70%;
+    margin-bottom: 1rem;
+
+}
+.success-card h1{
+    font-size: clamp(3rem,6vw,4rem);
+    
+}
+.success-card p{
+    font-size: clamp(1rem, 3vw, 2rem);
+}
+.success-card p strong{
+    font-size:clamp(0.8rem, 4vw, 1.5rem);
+}
+.success-card .success-btn{
+    display:block;
+    padding:1rem;
+    border:none;
+    width:80%;
+    margin:0 auto;
+    }
+    .success-card .imgDiv{
+    width:3rem;
+    height:3rem;
+    background-image: url('/assets/images/icon-success.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    }
+@media screen and (max-width: 768px)  {
+  *{
+    font-size: 16px;
+  }
+    .container{
+    flex-direction: column;
+    align-items: center;
+    padding:0;
+
+  } 
+  .info-section{
+    display:'none';
+    flex:1;
+    margin:0;
+    height:100%;
+    width:100vw;
+    
+  } 
+  .item:nth-child(2){
+    order:-1;
+    flex:0.3;
+   
+   }
+
+   .image-container{
+    height:40vh;
+    width:100vw;
+    margin:0;
+    background-image:url('/assets/images/illustration-sign-up-mobile.svg');
+    background-size:cover;
+    background-repeat: none;
+    background-position: center center;
+   }
+   .heading-sub h1,.form button{
+    font-weight: 700;
+
+   }
+   .success-card{
+    width:100vw;
+    height:100vh;
+    
+   }
+   .success-card h1{
+    margin-bottom: 1.5rem;
+   }
+   .success-card .imgDiv{
+    margin-bottom: 3rem;
+    width:5rem;
+    height:5rem;
+   }
+   .success-card .texts{
+    justify-content: left;
+   }
+}
